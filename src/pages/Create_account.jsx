@@ -1,63 +1,81 @@
+import { useState } from "react";
 import Footer from "../comman/Footer";
 import Navbar from "../comman/Navbar";
 
 function Create_account(){
+
+    const[user_name , setusername] = useState("");
+     const[user_mobile , setusermobile] = useState("");
+      const[user_Email , setuserEmail] = useState("");
+       const[user_password , setuserpassword] = useState("");
+
+       function Formsubmit(e){
+        e.preventDefault()
+        console.log({
+        user_name,
+        user_mobile,
+      user_Email,
+        user_password,
+       });
+
+       }
+
     return(
         <>
         <Navbar/>
 
         <br/><br/>
        
-<form>
-      <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
-        <div class="w-full bg-white rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0">
-          <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-            <p class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
+<form action="" method="" onSubmit={Formsubmit}>
+      <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto lg:py-0">
+        <div className="w-full bg-white rounded-lg shadow border md:mt-0 sm:max-w-md xl:p-0">
+          <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+            <p className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl">
               Create an account
             
             
               </p>
               <div>
-                <label class="block mb-2 text-sm font-medium text-gray-900">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Your username
                 </label>
-                <input placeholder="enter username" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" id="username" type="text"/>
+                <input onChange={(e)=>setusername(e.target.value)} placeholder="enter username" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" id="username" type="text"/>
               </div>
               <div>
-                <label class="block mb-2 text-sm font-medium text-gray-900">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                 Your usermobile
                 </label>
-                <input placeholder="enter usermobile" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" id="username" type="number"/>
+                <input onChange={(e)=>setusermobile(e.target.value)}  placeholder="enter usermobile" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" id="usermobile" type="number"/>
               </div>
               <div>
-                <label class="block mb-2 text-sm font-medium text-gray-900">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Your userEmail
                 </label>
-                <input placeholder="enter userEmail" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" id="username" type="text"/>
+                <input onChange={(e)=>setuserEmail(e.target.value)} placeholder="enter userEmail" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" id="usEmail" type="email"/>
               </div>
 
               <div>
-                <label class="block mb-2 text-sm font-medium text-gray-900">
+                <label className="block mb-2 text-sm font-medium text-gray-900">
                   Password
                 </label>
-                <input class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" placeholder="••••••••" id="password" type="password"/>
+                <input  onChange={(e) => setuserpassword(e.target.value)} className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg block w-full p-2.5" placeholder="password" id="......." type="password"/>
               </div>
              
-              <div class="flex items-start">
-                <div class="flex items-center h-5">
-                  <input class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 bg-gray-700 border-gray-600 focus:ring-primary-600 ring-offset-gray-800" type="checkbox" aria-describedby="terms" id="terms"/>
+              <div className="flex items-start">
+                <div className="flex items-center h-5">
+                  <input className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 bg-gray-700 border-gray-600 focus:ring-primary-600 ring-offset-gray-800" type="checkbox" aria-describedby="terms" id="terms"/>
                 </div>
-                <div class="ml-3 text-sm">
-                  <label class="font-light text-gray-500 text-gray-300">
+                <div className="ml-3 text-sm">
+                  <label className="font-light text-gray-500 text-gray-300">
                     I accept the
-                    <a href="#" class="font-medium text-primary-600 hover:underline text-primary-500">
+                    <a href="#" className="font-medium text-primary-600 hover:underline text-primary-500">
                       Terms and Conditions
                     </a>
                   </label>
                 </div>
               </div>
 
-              <button class="w-full bg-blue-500 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  focus:ring-blue-800 text-white" type="submit">
+              <button className="w-full bg-blue-500 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  focus:ring-blue-800 text-white" type="submit">
                 Create an account
               </button>
             
